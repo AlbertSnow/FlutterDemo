@@ -1,56 +1,17 @@
+import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:my_routine_app/second.dart';
-import 'package:my_routine_app/third.dart';
 
-import 'fourth.dart';
+class SecondPage extends StatefulWidget {
+  SecondPage({Key key}) : super(key: key);
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+  final String title = 'SecondPage';
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _SecondPageState createState() => _SecondPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _SecondPageState extends State<SecondPage> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -105,24 +66,13 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            TextButton(
-                child: Text('JumpNormalPicturePage'),
-                onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()),
-                );
-            }),
-            TextButton(
-                child: Text('JumpCacheDimensionPicturePage'),
-                onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ThirdPage()),
-                );
-            }),
-            TextButton(
-                child: Text('NoPicturePage'),
-                onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => FourthPage()),
-                );
-            }),
+            Image.file(
+              File("/storage/emulated/0/DCIM/Camera/IMG20210413184139.jpg"),
+              // File("/storage/emulated/0/DCIM/Camera/IMG20210423143850.jpg"),
+              // File("/storage/emulated/0/DCIM/Screenshots/Screenshot_2021-05-14-20-41-39-46.jpg"),
+              width: 200,
+              height: 200,
+            )
           ],
         ),
       ),
