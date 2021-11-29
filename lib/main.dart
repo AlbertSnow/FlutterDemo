@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:my_routine_app/architecture/architecture.dart';
 import 'package:my_routine_app/second.dart';
 import 'package:my_routine_app/third.dart';
 
@@ -128,6 +129,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('Layout Page'),
                 onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutPage()),
+                );
+            }),
+            TextButton(
+                child: Text('Provider Architecture Page'),
+                onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ArchitecturePage()),
                 );
             }),
           ],
