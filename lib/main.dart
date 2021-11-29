@@ -4,6 +4,7 @@ import 'package:my_routine_app/second.dart';
 import 'package:my_routine_app/third.dart';
 
 import 'fourth.dart';
+import 'job/LayoutPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -121,6 +122,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('NoPicturePage'),
                 onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => FourthPage()),
+                );
+            }),
+            TextButton(
+                child: Text('Layout Page'),
+                onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutPage()),
                 );
             }),
           ],
